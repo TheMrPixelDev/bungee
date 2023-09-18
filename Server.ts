@@ -5,7 +5,7 @@ export type Method = "GET" | "POST" | "PATCH" | "PUT" | "OPTIONS";
 export type EndpointHandler = (req: EndpointRequest) => Response;
 export type EndpointRequest = Request & { query?: KeyValue };
 
-export class HttpServer {
+export class Bungee {
   private endpointGroups: Map<Method, Map<string, EndpointHandler>> = new Map();
 
   public get(path: string, handler: EndpointHandler): void {

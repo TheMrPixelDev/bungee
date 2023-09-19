@@ -19,3 +19,8 @@ app.start("0.0.0.0", 8080)
 wget localhost:8080/?name=World
 > Hello World
 ```
+# Upcoming features
+
+- Path Variables (Params)
+- Middlewares
+- Routers

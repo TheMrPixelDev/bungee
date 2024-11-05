@@ -41,7 +41,7 @@ export function parseUrl(url: string): URL | null {
   const domain = urlParts[2];
   const path = urlParts[3];
   const query = urlParts[4];
-  const fragment = urlParts[5];
+  //const fragment = urlParts[5];
 
   return {
     protocol: protocol !== undefined ? protocol as Protocol : undefined,
@@ -50,3 +50,12 @@ export function parseUrl(url: string): URL | null {
     query: parseQuery(query),
   };
 }
+
+function parsePath(path: string) {
+  const parts = path.split("/");
+
+  const exp = /\<(.*)\>/;
+  console.log(path.matchAll(exp));
+}
+
+parsePath("/hello/<world>/bla");
